@@ -23,4 +23,7 @@ a{color:var(--accent)}
 .crumb{margin:0 0 16px;font-size:.9rem}
 .links{padding-left:20px}
 footer{margin-top:40px;color:var(--muted);font-size:.85rem}
-@media (max-width:480px){.hero{flex-direction:column;align-items:flex-start}}
+.banner{width:100%;height:auto;border-radius:14px;margin:20px 0 12px;border:1px solid var(--line);display:block}
+.screenshots{display:flex;gap:12px;overflow-x:auto;padding:8px 0 16px;margin:12px 0 20px;-webkit-overflow-scrolling:touch}
+.screenshots img{height:360px;width:auto;border-radius:12px;border:1px solid var(--line);flex:none}
+@media (max-width:480px){.hero{flex-direction:column;align-items:flex-start}.screenshots img{height:280px}}
