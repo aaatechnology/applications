@@ -27,7 +27,7 @@
 
 <h2>3. Transfer to PC (Built-in FTP Server) & Network Connections</h2>
 <ul>
-<li><strong>Transfer to PC (FTP Server):</strong> When you enable the "Transfer to PC" feature, the App starts a local FTP server using an Android Foreground Service. This allows you to access and transfer files between your phone and a computer over your local Wi-Fi / local area network (LAN). All transfers occur directly on your local network. No external servers or cloud services are involved.</li>
+<li><strong>Transfer to PC (FTP Server):</strong> When you enable the "Transfer to PC" feature, the App starts a local FTP server using an Android Foreground Service. This allows you to access and transfer files between your phone and a computer over your local Wi-Fi / local area network (LAN). All transfers occur directly on your local network. No external servers or cloud services are involved. During an active transfer, the App holds a wake lock (<code>WAKE_LOCK</code>) to keep the CPU active and prevent interrupted transfers.</li>
 <li><strong>Remote FTP/FTPS Connections:</strong> If you use the App to connect to external FTP or FTPS servers, connection parameters and login credentials you enter are stored securely on your device and are used only to establish connections requested by you.</li>
 </ul>
 
@@ -43,8 +43,9 @@
 <h2>5. Optional Permissions</h2>
 <ul>
 <li><strong>Notifications (Android 13+):</strong> Used to display status notifications while the FTP Server (Transfer to PC) foreground service is active.</li>
-<li><strong>Accessibility Service (Optional):</strong> The App includes an optional feature to stop background processes. This requires Accessibility Service permission only if you choose to enable it. The service interacts strictly with system settings to stop apps you specify and does not collect, record, or store any data.</li>
+<li><strong>Accessibility Service (Optional):</strong> The App includes an optional feature to force-stop other applications. This requires Accessibility Service permission only if you choose to enable it. When active, the service automates navigation within Android's system Settings screen to locate and tap the "Force stop" button for apps you select. It does not collect, record, or store any data about you or the apps it stops, and it performs no actions beyond the specific force-stop interaction you initiate.</li>
 <li><strong>Superuser / Root Access (Optional):</strong> On rooted devices, root permissions allow browsing system directories if explicitly granted by the user.</li>
+<li><strong>Installed Applications (Optional):</strong> The App includes an optional "Apps" section that lists the applications installed on your device, using the Android <code>PackageManager</code> API. This information is queried and displayed locally only; the list of your installed apps is never uploaded, transmitted, or shared with us or any third party.</li>
 </ul>
 
 <h2>6. Data Security</h2>
